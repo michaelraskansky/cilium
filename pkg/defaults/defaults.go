@@ -438,6 +438,6 @@ const (
 	// ARPBaseReachableTime resembles the kernel's NEIGH_VAR_BASE_REACHABLE_TIME which defaults to 30 seconds.
 	ARPBaseReachableTime = 30 * time.Second
 
-	// DisableSipVerification disables source ip verification
-	DisableSipVerification = false
+	// EnableSipVerification enables source ip verification
+	EnableSipVerification = true
 )

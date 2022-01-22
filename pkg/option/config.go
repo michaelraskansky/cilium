@@ -994,8 +994,8 @@ const (
 	// regardless of whether it's available in the pool.
 	BypassIPAvailabilityUponRestore = "bypass-ip-availability-upon-restore"
 
-	// DisableSipVerification disable sip verification
-	DisableSipVerification = "disable-sip-verification"
+	// EnableSipVerification enable sip verification
+	EnableSipVerification = "enable-sip-verification"
 
 	// EnableK8sTerminatingEndpoint enables the option to auto detect terminating
 	// state for endpoints in order to support graceful termination.
@@ -2046,8 +2046,8 @@ type DaemonConfig struct {
 	// regardless of whether it's available in the pool.
 	BypassIPAvailabilityUponRestore bool
 
-	// DisableSipVerification bypasses sip verification
-	DisableSipVerification bool
+	// EnableSipVerification bypasses sip verification
+	EnableSipVerification bool
 
 	// EnableK8sTerminatingEndpoint enables auto-detect of terminating state for
 	// Kubernetes service endpoints.
@@ -2094,7 +2094,7 @@ var (
 		K8sEnableAPIDiscovery:        defaults.K8sEnableAPIDiscovery,
 		AllocatorListTimeout:         defaults.AllocatorListTimeout,
 		EnableICMPRules:              defaults.EnableICMPRules,
-		DisableSipVerification:       defaults.DisableSipVerification,
+		EnableSipVerification:       defaults.EnableSipVerification,
 
 		K8sEnableLeasesFallbackDiscovery: defaults.K8sEnableLeasesFallbackDiscovery,
 		APIRateLimit:                     make(map[string]string),
@@ -2919,7 +2919,7 @@ func (c *DaemonConfig) Populate() {
 	c.DisableCNPStatusUpdates = viper.GetBool(DisableCNPStatusUpdates)
 	c.EnableICMPRules = viper.GetBool(EnableICMPRules)
 	c.BypassIPAvailabilityUponRestore = viper.GetBool(BypassIPAvailabilityUponRestore)
-	c.DisableSipVerification = viper.GetBool(DisableSipVerification)
+	c.EnableSipVerification = viper.GetBool(EnableSipVerification)
 	c.EnableK8sTerminatingEndpoint = viper.GetBool(EnableK8sTerminatingEndpoint)
 }
 
